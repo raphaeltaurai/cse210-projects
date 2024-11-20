@@ -13,9 +13,10 @@ class Program
         {
         Console.Write("Enter number:");
         entry = Console.ReadLine();
-        int number = int.Parse(entry);
-
-        numbers.Add(number);
+        if (int.TryParse(entry, out int number) && number != 0)
+            {
+                numbers.Add(number);
+            }
         }
 
         int sum = 0;
@@ -25,9 +26,19 @@ class Program
             sum += number;
         }
 
-        Console.WriteLine("Sum: " + sum);
-        Console.WriteLine($"Total:{numbers.Sum()}");
-        Console.WriteLine($"Mean:{numbers.Average()}");
+        Console.WriteLine($"Total: {sum}");
+        Console.WriteLine($"Mean:  {numbers.Average()}");
 
+        int largest = numbers[0]; 
+
+        for (int i = 1; i < numbers.Count; i++)
+        {
+            if (numbers[i] > largest)
+            {
+                largest = numbers[i]; // Update largest number
+            }
+        }
+
+        Console.WriteLine($"Largest number: {largest}");
     }
 }
