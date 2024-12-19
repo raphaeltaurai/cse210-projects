@@ -1,3 +1,5 @@
+using System;
+
 public class EternalGoal : Goal
 {
     public EternalGoal(string name, string description, int points)
@@ -7,14 +9,14 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        Console.WriteLine($"Eternal goal '{_shortName}' progress recorded! You earned {_points} points.");
+        Console.WriteLine($"Eternal goal '{ShortName}' progress recorded! You earned {Points} points.");
     }
 
     public override bool IsComplete() => false;
 
     public override string GetDetailsString()
-        => $"[Eternal] {_shortName}: {_description} - Points: {_points}";
+        => $"[Eternal] {ShortName}: {Description} - Points: {Points}";
 
     public override string GetStringRepresentation()
-        => $"EternalGoal|{_shortName}|{_description}|{_points}";
+        => $"EternalGoal|{ShortName}|{Description}|{Points}";
 }

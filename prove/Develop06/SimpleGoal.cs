@@ -1,6 +1,10 @@
+using System;
+
 public class SimpleGoal : Goal
 {
-    protected bool _isComplete; // Changed to protected
+    private bool _isComplete;
+
+    public bool IsCompleteFlag => _isComplete;
 
     public SimpleGoal(string name, string description, int points)
         : base(name, description, points)
@@ -13,19 +17,19 @@ public class SimpleGoal : Goal
         if (!_isComplete)
         {
             _isComplete = true;
-            Console.WriteLine($"Goal '{_shortName}' completed! You earned {_points} points.");
+            Console.WriteLine($"Goal '{ShortName}' completed! You earned {Points} points.");
         }
         else
         {
-            Console.WriteLine($"Goal '{_shortName}' is already completed.");
+            Console.WriteLine($"Goal '{ShortName}' is already completed.");
         }
     }
 
     public override bool IsComplete() => _isComplete;
 
     public override string GetDetailsString()
-        => $"[Simple] {_shortName}: {_description} - Points: {_points} - Completed: {IsComplete()}";
+        => $"[Simple] {ShortName}: {Description} - Points: {Points} - Completed: {IsComplete()}";
 
     public override string GetStringRepresentation()
-        => $"SimpleGoal|{_shortName}|{_description}|{_points}|{_isComplete}";
-        }
+        => $"SimpleGoal|{ShortName}|{Description}|{Points}|{_isComplete}";
+}

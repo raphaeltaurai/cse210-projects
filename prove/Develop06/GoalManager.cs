@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 public class GoalManager
 {
     private List<Goal> _goals = new List<Goal>();
@@ -97,7 +100,7 @@ public class GoalManager
         if (goalIndex >= 0 && goalIndex < _goals.Count)
         {
             _goals[goalIndex].RecordEvent();
-            _score += _goals[goalIndex]._points; // Access to _points is now allowed
+            _score += _goals[goalIndex].Points;
         }
         else
         {

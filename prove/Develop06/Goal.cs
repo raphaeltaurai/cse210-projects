@@ -1,8 +1,12 @@
 public abstract class Goal
 {
-    protected string _shortName;
-    protected string _description;
-    public int _points; // Changed to protected
+    private string _shortName;
+    private string _description;
+    private int _points;
+
+    public string ShortName => _shortName;
+    public string Description => _description;
+    public int Points => _points;
 
     public Goal(string name, string description, int points)
     {
