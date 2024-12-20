@@ -33,6 +33,7 @@ public class GoalManager
                     break;
                 case "4":
                     running = false;
+                    Console.WriteLine("Thank you for using Eternal Quest");
                     break;
                 default:
                     Console.WriteLine("Invalid option. Please try again.");
@@ -105,6 +106,10 @@ public class GoalManager
         else
         {
             Console.WriteLine("Invalid goal number.");
-        }
+        }}
+
+        
     }
-}
+    
+
+
